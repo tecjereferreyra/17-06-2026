@@ -149,10 +149,14 @@ button:hover {
   border-radius: 12px; 
   padding: 20px; 
   text-align: center; 
-  border-top: 5px solid #555; 
+  border-top: 5px solid #c9c9c9; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition:all 0.3s ease;
 } 
- 
+ .tarjeta:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.20);
+ }
 .disponible { 
   color: green; 
 font-weight: bold; 
