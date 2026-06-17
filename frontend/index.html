@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Sistema de Turnos para una peluquería</title> 
+  <link rel="stylesheet" href="/frontend/Style.css"> 
+</head> 
+<body> 
+<header> 
+  <h1>Sistema de Turnos para una peluquería</h1> 
+  <p>Frontend conectado a API Node.js y SQL Server</p> 
+</header> 
+ <nav>
+    <ul>
+      <li><a href="#registrar-turno">Registrar turno</a></li>
+      <li><a href="#listado-turnos">Listado de turnos</a></li>
+    </ul>
+ </nav>
+<main> 
+  <section class="panel"> 
+    <h2>Registrar turno</h2> 
+    <form id="formTurnos"> 
+      <input type="text" id="cliente" placeholder="Nombre del cliente"> 
+      <input type="text" id="servicio" placeholder="Servicio"> 
+      <input type="date" id="fecha" placeholder="Fecha"> 
+      <input type="text" id="hora" placeholder="Hora"> 
+      <select id="confirmado">
+        <option value="">Seleccionar confirmación</option>
+        <option value="true">Confirmado</option>
+        <option value="false">No confirmado</option>
+      </select>
+      <button type="submit">Guardar turno</button> 
+    </form> 
+    <p id="mensaje"></p> 
+  </section> 
+ 
+  <section class="panel"> 
+    <h2>Listado de turnos</h2> 
+ 
+  <div class="acciones"> 
+      <button id="btnCargar">Recargar turnos</button> 
+      <button id="btnTodas">Mostrar todas</button> 
+      <button id="btnConfirmados">Mostrar turnos confirmados</button> 
+      <button id="btnNoConfirmados">Mostrar turnos no confirmados</button> 
+    </div> 
+ 
+    <div id="listadoTurnos" class="galeria"></div> 
+  </section> 
+</main> 
+ <footer>
+    <p>&copy; 2026 Peluquería "Estilo y Corte". Todos los derechos reservados.</p>
+ </footer>
+<script src="/frontend/app.js"></script> 
+</body> 
+</html>
+           
