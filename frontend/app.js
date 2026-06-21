@@ -10,8 +10,8 @@ const listado = document.querySelector("#listadoTurnos");
 const mensaje = document.querySelector("#mensaje"); 
 const btnCargar = document.querySelector("#btnCargar"); 
 const btnTodas = document.querySelector("#btnTodas"); 
-const btnDisponibles = document.querySelector("#btnDisponibles"); 
-const btnNoDisponibles = document.querySelector("#btnNoDisponibles"); 
+const btnConfirmados = document.querySelector("#btnConfirmados"); 
+const btnNoConfirmados = document.querySelector("#btnNoConfirmados"); 
  
 
 let turnosActuales = []; 
@@ -66,19 +66,19 @@ function mostrarTodas() {
   mensaje.className = "ok"; 
 } 
  
-function mostrarDisponibles() { 
-  const turnosDisponibles = turnosActuales.filter(turno => 
+function mostrarConfirmados() { 
+  const turnosConfirmados = turnosActuales.filter(turno => 
 turno.confirmado); 
-  mostrarTurnos(turnosDisponibles); 
-  mensaje.textContent = "Mostrando turnos disponibles."; 
+  mostrarTurnos(turnosConfirmados); 
+  mensaje.textContent = "Mostrando turnos confirmados."; 
   mensaje.className = "ok"; 
 } 
  
-function mostrarNoDisponibles() { 
-  const turnosNoDisponibles = turnosActuales.filter(turno => 
+function mostrarNoConfirmados() { 
+  const turnosNoConfirmados = turnosActuales.filter(turno => 
 !turno.confirmado); 
-  mostrarTurnos(turnosNoDisponibles); 
-  mensaje.textContent = "Mostrando turnos no disponibles."; 
+  mostrarTurnos(turnosNoConfirmados); 
+  mensaje.textContent = "Mostrando turnos no confirmados."; 
   mensaje.className = "ok"; 
 } 
  
@@ -127,6 +127,6 @@ nuevoTurno.fecha === "" || nuevoTurno.hora === "") {
 formulario.addEventListener("submit", guardarTurno); 
 btnCargar.addEventListener("click", cargarTurnos); 
 btnTodas.addEventListener("click", mostrarTodas); 
-btnDisponibles.addEventListener("click", mostrarDisponibles); 
-btnNoDisponibles.addEventListener("click", mostrarNoDisponibles); 
+btnConfirmados.addEventListener("click", mostrarConfirmados); 
+btnNoConfirmados.addEventListener("click", mostrarNoConfirmados); 
 cargarTurnos();
